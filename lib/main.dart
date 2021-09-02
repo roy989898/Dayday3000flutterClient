@@ -53,7 +53,7 @@ class Page2 extends StatelessWidget {
 
 class Other extends StatelessWidget {
   // You can ask Get to find a Controller that is being used by another page and redirect you to it.
-  final Controller c = Get.find();
+  final Controller c = Get.find(tag: 'Page2');
 
   @override
   Widget build(context) {
@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.pink,
         ),
         home: SafeArea(child: Page1()));
   }
