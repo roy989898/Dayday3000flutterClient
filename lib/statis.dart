@@ -1,5 +1,6 @@
-class Statis {
+class Static {
   static const fullPadding = 16.0;
+  static const fullPaddingX2 = 32.0;
   static const halfPadding = 8.0;
   static const padding4 = 8.0;
   static const defaultFontSize = 16.0;
@@ -17,4 +18,10 @@ class Statis {
   static const text_7xl = 4.5 * defaultFontSize;
   static const text_8xl = 6 * defaultFontSize;
   static const text_9xl = 8 * defaultFontSize;
+
+  static double paddingCalculate(double i) {
+    return i * 0.25;
+  }
+
+  static final p_0 = paddingCalculate(0);
 }
