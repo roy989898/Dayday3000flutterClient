@@ -21,15 +21,22 @@ class LoginPagePage extends StatelessWidget {
                 child: Column(
               children: [
                 TextField(
+                  style: TextStyle(fontSize: Statis.text_base),
                   decoration: InputDecoration.collapsed(hintText: 'Name'),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: Statis.padding4),
                   child: TextField(
+                    style: TextStyle(fontSize: Statis.text_base),
                     decoration: InputDecoration.collapsed(hintText: 'Password'),
                   ),
                 ),
-                TextButton(onPressed: () {}, child: Text('Login'))
+                TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Login',
+                      style: TextStyle(fontSize: Statis.text_base),
+                    ))
               ],
             ))
           ],
