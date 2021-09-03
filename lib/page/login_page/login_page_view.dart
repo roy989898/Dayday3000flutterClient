@@ -35,7 +35,7 @@ class LoginPagePage extends StatelessWidget {
                   decoration: InputDecoration.collapsed(hintText: 'Name'),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: Static.padding4),
+                  padding: EdgeInsets.only(top: Static.p_32),
                   child: TextField(
                     style: TextStyle(fontSize: Static.text_base),
                     decoration: InputDecoration.collapsed(hintText: 'Password'),

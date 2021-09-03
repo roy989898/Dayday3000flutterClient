@@ -1,8 +1,6 @@
 class Static {
   static const fullPadding = 16.0;
-  static const fullPaddingX2 = 32.0;
   static const halfPadding = 8.0;
-  static const padding4 = 8.0;
   static const defaultFontSize = 16.0;
 
   static const text_xs = 0.75 * defaultFontSize;
