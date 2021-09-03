@@ -23,7 +23,7 @@ class LoginPagePage extends StatelessWidget {
               children: [
                 Padding(
                   padding: EdgeInsets.only(
-                      top: Static.halfPadding, bottom: Static.p_0),
+                      top: Static.halfPadding, bottom: Static.p_96),
                   child: Text('DayDay3000',
                       style: GoogleFonts.dancingScript(
                         fontSize: Static.text_4xl,
