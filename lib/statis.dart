@@ -24,4 +24,37 @@ class Static {
   }
 
   static final p_0 = paddingCalculate(0);
+  static final p_px = paddingCalculate(4);
+  static final p_0_5 = paddingCalculate(0.5);
+  static final p_1 = paddingCalculate(0.1);
+  static final p_1_5 = paddingCalculate(1.5);
+  static final p_2 = paddingCalculate(2);
+  static final p_2_5 = paddingCalculate(2.5);
+  static final p_3 = paddingCalculate(3);
+  static final p_3_5 = paddingCalculate(3.5);
+  static final p_4 = paddingCalculate(4);
+  static final p_5 = paddingCalculate(5);
+  static final p_6 = paddingCalculate(6);
+  static final p_7 = paddingCalculate(7);
+  static final p_8 = paddingCalculate(8);
+  static final p_9 = paddingCalculate(9);
+  static final p_10 = paddingCalculate(10);
+  static final p_11 = paddingCalculate(11);
+  static final p_12 = paddingCalculate(12);
+  static final p_13 = paddingCalculate(13);
+  static final p_14 = paddingCalculate(14);
+  static final p_16 = paddingCalculate(16);
+  static final p_20 = paddingCalculate(20);
+  static final p_24 = paddingCalculate(24);
+  static final p_28 = paddingCalculate(28);
+  static final p_32 = paddingCalculate(32);
+  static final p_36 = paddingCalculate(36);
+  static final p_40 = paddingCalculate(40);
+  static final p_44 = paddingCalculate(44);
+  static final p_48 = paddingCalculate(48);
+  static final p_52 = paddingCalculate(52);
+  static final p_60 = paddingCalculate(60);
+  static final p_72 = paddingCalculate(72);
+  static final p_80 = paddingCalculate(80);
+  static final p_96 = paddingCalculate(96);
 }

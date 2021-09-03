@@ -22,8 +22,8 @@ class LoginPagePage extends StatelessWidget {
                 child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                      top: Static.halfPadding, bottom: const Static.p_0),
+                  padding: EdgeInsets.only(
+                      top: Static.halfPadding, bottom: Static.p_0),
                   child: Text('DayDay3000',
                       style: GoogleFonts.dancingScript(
                         fontSize: Static.text_4xl,
