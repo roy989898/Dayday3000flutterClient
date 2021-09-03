@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../statis.dart';
 
@@ -19,6 +20,7 @@ class _ColorTextState extends State<ColorText> {
         style: GoogleFonts.dancingScript(
           fontSize: Static.text_4xl,
           fontWeight: FontWeight.w900,
+          color: TWTwoColors.pink.shade500,
         ));
   }
 }

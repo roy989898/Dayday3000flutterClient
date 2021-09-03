@@ -239,7 +239,7 @@ packages:
       name: tailwind_colors
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.3.0-nullsafety.1"
   term_glyph:
     dependency: transitive
     description:
