@@ -10,7 +10,6 @@ class LoginPagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final logic = Get.put(LoginPageLogic());
-    final state = Get.find<LoginPageLogic>().state;
 
     return SafeArea(
         child: Scaffold(
@@ -32,20 +31,28 @@ class LoginPagePage extends StatelessWidget {
                 TextField(
                   style: TextStyle(fontSize: Static.text_base),
                   decoration: InputDecoration.collapsed(hintText: 'Name'),
+                  onChanged: (String name) {
+                    logic.setUsername(name);
+                  },
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: Static.p_32),
                   child: TextField(
+                    onChanged: (String password) {
+                      logic.setPassword(password);
+                    },
                     style: TextStyle(fontSize: Static.text_base),
                     decoration: InputDecoration.collapsed(hintText: 'Password'),
                   ),
                 ),
                 TextButton(
                     onPressed: () {},
-                    child: Text(
-                      'Login',
-                      style: TextStyle(fontSize: Static.text_base),
-                    ))
+                    child: Obx(() {
+                      return Text(
+                        'Login: ' + logic.state.value.btEnabled.toString(),
+                        style: TextStyle(fontSize: Static.text_base),
+                      );
+                    }))
               ],
             ))
           ],
