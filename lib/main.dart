@@ -16,9 +16,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
         title: 'Flutter Demo',
         initialRoute: '/login',
-        theme: ThemeData(
-          primaryColor: white,
-        ),
+        theme: ThemeData(primarySwatch: Colors.pink),
         getPages: [
           GetPage(
             name: '/',
@@ -28,7 +26,6 @@ class MyApp extends StatelessWidget {
             name: '/login',
             page: () => LoginPagePage(),
           ),
-
         ]);
   }
 }

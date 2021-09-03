@@ -11,9 +11,22 @@ class LoginPagePage extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
-          body: Column(
-            children: [Text('LoginPagePage')],
-          ),
-        ));
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+              child: Column(
+            children: [
+              TextField(
+                decoration: InputDecoration.collapsed(hintText: 'Name'),
+              ),
+              TextField(
+                decoration: InputDecoration.collapsed(hintText: 'Password'),
+              ),
+            ],
+          ))
+        ],
+      ),
+    ));
   }
 }
