@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'colors.dart';
 import 'page/DisplayListPage.dart';
+import 'page/login_page/login_page_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         title: 'Flutter Demo',
-        initialRoute: '/',
+        initialRoute: '/login',
         theme: ThemeData(
           primaryColor: white,
         ),
@@ -22,7 +23,12 @@ class MyApp extends StatelessWidget {
           GetPage(
             name: '/',
             page: () => DisplayListPage(),
-          )
+          ),
+          GetPage(
+            name: '/login',
+            page: () => LoginPagePage(),
+          ),
+
         ]);
   }
 }
