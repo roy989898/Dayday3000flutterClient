@@ -3,6 +3,7 @@ import 'package:day_day_3000_fluter_client/statis.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 import 'login_page_logic.dart';
 
@@ -45,14 +46,23 @@ class LoginPagePage extends StatelessWidget {
                     decoration: InputDecoration.collapsed(hintText: 'Password'),
                   ),
                 ),
-                TextButton(
-                    onPressed: () {},
-                    child: Obx(() {
-                      return Text(
-                        'Login: ' + logic.state.value.btEnabled.toString(),
+                Obx(() {
+                  return TextButton(
+                      style: TextButton.styleFrom(
+                        primary: logic.state.value.btEnabled
+                            ? Colors.pink
+                            : TWColors.gray.shade500,
+                      ),
+                      onPressed: () {
+                        if (logic.state.value.btEnabled) {
+                          //  TODO login click
+                        }
+                      },
+                      child: Text(
+                        'Login',
                         style: TextStyle(fontSize: Static.text_base),
-                      );
-                    }))
+                      ));
+                })
               ],
             ))
           ],
