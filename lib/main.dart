@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
           // Define the default brightness and colors.
           brightness: Brightness.dark,
           primaryColor: TWColors.pink.shade500,
+          buttonColor: TWColors.pink.shade500,
           accentColor: TWColors.orange.shade500,
           disabledColor: TWColors.gray.shade500,
 

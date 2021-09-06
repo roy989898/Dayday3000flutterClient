@@ -18,8 +18,8 @@ class NewColorText extends StatefulWidget {
 }
 
 class _NewColorTextState extends State<NewColorText> {
-  var _beginColor = TWTwoColors.yellow.shade500;
-  var _endColorColor = TWTwoColors.pink.shade500;
+  var _beginNum = 0;
+
   var _colos = [
     Colors.pink,
     Colors.red,
@@ -27,18 +27,23 @@ class _NewColorTextState extends State<NewColorText> {
     Colors.orange,
     Colors.amber,
   ];
+  var _endNum = 0;
+
+  _NewColorTextState() {
+    _endNum = _colos.length - 1;
+  }
 
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder(
-        tween: Tween<double>(begin: 0, end: _colos.length-1),
-        duration: Duration(seconds: 10),
+        tween: Tween<double>(begin: 0, end: _endNum.toDouble()),
+        duration: Duration(seconds: 4),
         onEnd: () {
           setState(() {
-            if (_endColorColor == TWTwoColors.pink.shade500) {
-              _endColorColor = TWTwoColors.yellow.shade500;
+            if (_endNum == _colos.length - 1) {
+              _endNum = 0;
             } else {
-              _endColorColor = TWTwoColors.pink.shade500;
+              _endNum = _colos.length - 1;
             }
 
             // _endColorColor = TWTwoColors.yellow.shade500;
@@ -48,10 +53,9 @@ class _NewColorTextState extends State<NewColorText> {
           return Neon(
             text: widget.text,
             color: _colos[colorIndex.round()],
-            fontSize: Static.text_4xl,
+            fontSize: Static.text_5xl,
             font: NeonFont.Beon,
-            flickeringText: true,
-            flickeringLetters: [0, 1],
+            flickeringText: false,
           );
         });
   }

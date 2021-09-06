@@ -24,14 +24,6 @@ class LoginPagePage extends StatelessWidget {
             Center(
                 child: Column(
               children: [
-                Neon(
-                  text: 'Retro',
-                  color: Colors.green,
-                  fontSize: 50,
-                  font: NeonFont.Beon,
-                  flickeringText: true,
-                  flickeringLetters: [0, 1],
-                ),
                 Padding(
                   padding: EdgeInsets.only(
                       top: Static.halfPadding, bottom: Static.p_96),
@@ -61,7 +53,7 @@ class LoginPagePage extends StatelessWidget {
                   return TextButton(
                       style: TextButton.styleFrom(
                         primary: logic.state.value.btEnabled
-                            ? Theme.of(context).accentColor
+                            ? Theme.of(context).buttonColor
                             : Theme.of(context).disabledColor,
                       ),
                       onPressed: () {
@@ -73,7 +65,7 @@ class LoginPagePage extends StatelessWidget {
                         'login'.tr,
                         style: Theme.of(context).textTheme.button!.copyWith(
                             color: logic.state.value.btEnabled
-                                ? Theme.of(context).accentColor
+                                ? Theme.of(context).buttonColor
                                 : Theme.of(context).disabledColor),
                       ));
                 })
