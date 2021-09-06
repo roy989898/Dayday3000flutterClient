@@ -37,8 +37,11 @@ class MyApp extends StatelessWidget {
             headline6: TextStyle(
                 fontSize: Static.text_4xl, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: Static.text_sm, fontFamily: 'Hind'),
-            button: TextStyle(fontSize: Static.text_2xl, fontFamily: 'Hind'),
+            button: TextStyle(
+                fontSize: Static.text_2xl, fontFamily: 'Hind',
+            ),
           ),
+
         ),
         getPages: [
           GetPage(
