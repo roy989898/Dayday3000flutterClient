@@ -26,12 +26,12 @@ class LoginPagePage extends StatelessWidget {
                   padding: EdgeInsets.only(
                       top: Static.halfPadding, bottom: Static.p_96),
                   child: ColorText(
-                    text: 'DayDay 3000',
+                    text: 'app_name'.tr,
                   ),
                 ),
                 TextField(
                   style: TextStyle(fontSize: Static.text_base),
-                  decoration: InputDecoration.collapsed(hintText: 'Name'),
+                  decoration: InputDecoration.collapsed(hintText: 'name'.tr),
                   onChanged: (String name) {
                     logic.setUsername(name);
                   },
@@ -43,7 +43,8 @@ class LoginPagePage extends StatelessWidget {
                       logic.setPassword(password);
                     },
                     style: TextStyle(fontSize: Static.text_base),
-                    decoration: InputDecoration.collapsed(hintText: 'Password'),
+                    decoration:
+                        InputDecoration.collapsed(hintText: 'password'.tr),
                   ),
                 ),
                 Obx(() {
@@ -59,7 +60,7 @@ class LoginPagePage extends StatelessWidget {
                         }
                       },
                       child: Text(
-                        'Login',
+                        'login'.tr,
                         style: Theme.of(context).textTheme.button!.copyWith(
                             color: logic.state.value.btEnabled
                                 ? Theme.of(context).accentColor

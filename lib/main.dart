@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 import 'colors.dart';
+import 'language/Messages.dart';
 import 'page/DisplayListPage.dart';
 import 'page/login_page/login_page_view.dart';
 
@@ -16,6 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+        translations: Messages(),
+        // your translations
+        locale: Locale('en', 'US'),
         title: 'Flutter Demo',
         initialRoute: '/login',
         theme: ThemeData(
@@ -38,10 +42,10 @@ class MyApp extends StatelessWidget {
                 fontSize: Static.text_4xl, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: Static.text_sm, fontFamily: 'Hind'),
             button: TextStyle(
-                fontSize: Static.text_2xl, fontFamily: 'Hind',
+              fontSize: Static.text_2xl,
+              fontFamily: 'Hind',
             ),
           ),
-
         ),
         getPages: [
           GetPage(
