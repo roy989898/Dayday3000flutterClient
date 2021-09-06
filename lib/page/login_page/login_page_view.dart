@@ -1,8 +1,10 @@
 import 'package:day_day_3000_fluter_client/component/ColorText.dart';
+import 'package:day_day_3000_fluter_client/component/NewColorText.dart';
 import 'package:day_day_3000_fluter_client/statis.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:neon/neon.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 import 'login_page_logic.dart';
@@ -22,10 +24,18 @@ class LoginPagePage extends StatelessWidget {
             Center(
                 child: Column(
               children: [
+                Neon(
+                  text: 'Retro',
+                  color: Colors.green,
+                  fontSize: 50,
+                  font: NeonFont.Beon,
+                  flickeringText: true,
+                  flickeringLetters: [0, 1],
+                ),
                 Padding(
                   padding: EdgeInsets.only(
                       top: Static.halfPadding, bottom: Static.p_96),
-                  child: ColorText(
+                  child: NewColorText(
                     text: 'app_name'.tr,
                   ),
                 ),
