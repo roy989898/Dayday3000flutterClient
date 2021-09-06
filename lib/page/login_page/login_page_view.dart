@@ -60,7 +60,12 @@ class LoginPagePage extends StatelessWidget {
                       },
                       child: Text(
                         'Login',
-                        style: TextStyle(fontSize: Static.text_2xl),
+                        style: TextStyle(
+                          fontSize: Static.text_2xl,
+                          color: logic.state.value.btEnabled
+                              ? Theme.of(context).accentColor
+                              : Theme.of(context).disabledColor,
+                        ),
                       ));
                 })
               ],
