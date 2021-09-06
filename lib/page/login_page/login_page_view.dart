@@ -50,8 +50,8 @@ class LoginPagePage extends StatelessWidget {
                   return TextButton(
                       style: TextButton.styleFrom(
                         primary: logic.state.value.btEnabled
-                            ? Colors.pink
-                            : TWColors.gray.shade500,
+                            ? Theme.of(context).accentColor
+                            : Theme.of(context).disabledColor,
                       ),
                       onPressed: () {
                         if (logic.state.value.btEnabled) {

@@ -1,5 +1,7 @@
+import 'package:day_day_3000_fluter_client/statis.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 import 'colors.dart';
 import 'page/DisplayListPage.dart';
@@ -20,8 +22,9 @@ class MyApp extends StatelessWidget {
           //TODO make the theme
           // Define the default brightness and colors.
           brightness: Brightness.dark,
-          primaryColor: Colors.lightBlue[800],
-          accentColor: Colors.cyan[600],
+          primaryColor: TWColors.pink.shade500,
+          accentColor: TWColors.orange.shade500,
+          disabledColor: TWColors.gray.shade500,
 
           // Define the default font family.
           fontFamily: 'Georgia',
@@ -29,9 +32,12 @@ class MyApp extends StatelessWidget {
           // Define the default TextTheme. Use this to specify the default
           // text styling for headlines, titles, bodies of text, and more.
           textTheme: const TextTheme(
-            headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-            bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+            headline1: TextStyle(
+                fontSize: Static.text_7xl, fontWeight: FontWeight.bold),
+            headline6: TextStyle(
+                fontSize: Static.text_4xl, fontStyle: FontStyle.italic),
+            bodyText2: TextStyle(fontSize: Static.text_sm, fontFamily: 'Hind'),
+            button: TextStyle(fontSize: Static.text_2xl, fontFamily: 'Hind'),
           ),
         ),
         getPages: [
