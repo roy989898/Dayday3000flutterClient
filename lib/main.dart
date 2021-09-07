@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           disabledColor: TWColors.gray.shade500,
 
           // Define the default font family.
-          fontFamily: 'Georgia',
+          // fontFamily: 'Sans Serif',
 
           // Define the default TextTheme. Use this to specify the default
           // text styling for headlines, titles, bodies of text, and more.
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(fontSize: Static.text_sm, fontFamily: 'Hind'),
             button: TextStyle(
               fontSize: Static.text_2xl,
-              fontFamily: 'Hind',
+              // fontFamily: 'Sans Serif',
             ),
           ),
         ),
