@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
+import '../../FireBaseService.dart';
 import 'login_page_state.dart';
 
 class LoginPageLogic extends GetxController {
@@ -19,14 +20,9 @@ class LoginPageLogic extends GetxController {
   }
 
   Future<void> login() async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    var users = firestore.collection('users');
-    var usersCollectionResult = await users
-        .where('name', isEqualTo: state.value.username)
-        .where('password', isEqualTo: state.value.password)
-        .get();
-    var length = usersCollectionResult.docs.length;
-    if (length > 0) {
+    var loginSuccess =
+        await FireBaseService.login(state.value.username, state.value.password);
+    if (loginSuccess) {
       //  TODO login success
     }
   }
