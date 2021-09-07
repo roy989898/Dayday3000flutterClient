@@ -22,8 +22,8 @@ class LoginPageLogic extends GetxController {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     var users = firestore.collection('users');
     var usersCollectionResult = await users
-        .where('name', isEqualTo: 'admin')
-        .where('password', isEqualTo: 'pass')
+        .where('name', isEqualTo: state.value.username)
+        .where('password', isEqualTo: state.value.password)
         .get();
     var length = usersCollectionResult.docs.length;
     if (length > 0) {
