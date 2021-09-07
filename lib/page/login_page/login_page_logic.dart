@@ -20,6 +20,19 @@ class LoginPageLogic extends GetxController {
 
   Future<void> login() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
+    var users = firestore.collection('users');
+    var usersCollectionResult = await users
+        .where('name', isEqualTo: 'admin')
+        .where('password', isEqualTo: 'pass')
+        .get();
+    var length = usersCollectionResult.docs.length;
+    if (length > 0) {
+      //  TODO login success
+    }
+  }
+
+  Future<void> loginCopy() async {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
 
     var stock = firestore.collection('stock');
     QuerySnapshot<Map<String, dynamic>> stockResult = await stock.get();
@@ -32,7 +45,8 @@ class LoginPageLogic extends GetxController {
         firestore.collection('stock/$fdId/stock');
     var stockConnectionInSpecificDateResult =
         await stockConnectionInSpecificDate.get();
-    var xx = stockConnectionInSpecificDateResult.docs.first.get('current_lower_price');
+    var xx = stockConnectionInSpecificDateResult.docs.first
+        .get('current_lower_price');
     var i = 1 + 1;
 
     stockResult.docs.forEach((doc) async {
