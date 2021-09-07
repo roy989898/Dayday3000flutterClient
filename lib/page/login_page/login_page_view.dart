@@ -53,7 +53,7 @@ class LoginPagePage extends StatelessWidget {
                     enable: logic.state.value.btEnabled,
                     text: 'login'.tr,
                     click: () {
-                      //TODO login page
+                      logic.login();
                       printInfo(info: 'clicked');
                     },
                   );

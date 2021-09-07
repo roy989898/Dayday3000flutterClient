@@ -8,16 +8,19 @@ import 'colors.dart';
 import 'language/Messages.dart';
 import 'page/DisplayListPage.dart';
 import 'page/login_page/login_page_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // FirebaseFirestore firestore = FirebaseFirestore.instance;
     return GetMaterialApp(
         translations: Messages(),
         // your translations
