@@ -1,3 +1,4 @@
+import 'package:day_day_3000_fluter_client/component/AppButton.dart';
 import 'package:day_day_3000_fluter_client/component/ColorText.dart';
 import 'package:day_day_3000_fluter_client/component/NewColorText.dart';
 import 'package:day_day_3000_fluter_client/statis.dart';
@@ -50,21 +51,14 @@ class LoginPagePage extends StatelessWidget {
                   ),
                 ),
                 Obx(() {
-                  return TextButton(
-                      style: TextButton.styleFrom(
-                        backgroundColor: logic.state.value.btEnabled
-                            ? Theme.of(context).buttonColor
-                            : Theme.of(context).disabledColor,
-                      ),
-                      onPressed: () {
-                        if (logic.state.value.btEnabled) {
-                          //  TODO login click
-                        }
-                      },
-                      child: Text(
-                        'login'.tr,
-                        style: Theme.of(context).textTheme.button,
-                      ));
+                  return AppButton(
+                    enable: logic.state.value.btEnabled,
+                    text: 'login'.tr,
+                    click: () {
+                      //TODO login page
+                      printInfo(info: 'clicked');
+                    },
+                  );
                 })
               ],
             ))
