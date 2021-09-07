@@ -3,7 +3,7 @@
 
     <application
         android:icon="@mipmap/ic_launcher"
- 
+
         android:label="day_day_3000_fluter_client">
         <activity
             android:name=".MainActivity"
