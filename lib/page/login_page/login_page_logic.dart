@@ -20,8 +20,14 @@ class LoginPageLogic extends GetxController {
 
   Future<void> login() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
-    var testing=firestore.collection('testing');
-    var result=await testing.get();
-    var i=1+1;
+ 
+    var testing = firestore.collection('testing');
+    QuerySnapshot<Map<String, dynamic>> result = await testing.get();
+    result.docs.forEach((QueryDocumentSnapshot<Map<String, dynamic>> doc) {
+      var car=doc.get('car');
+      print('fgdf');
+    });
+
+    var i = 1 + 1;
   }
 }
