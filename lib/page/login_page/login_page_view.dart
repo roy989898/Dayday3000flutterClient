@@ -1,4 +1,5 @@
 import 'package:day_day_3000_fluter_client/component/AppButton.dart';
+import 'package:day_day_3000_fluter_client/component/AppInputField.dart';
 import 'package:day_day_3000_fluter_client/component/ColorText.dart';
 import 'package:day_day_3000_fluter_client/component/NewColorText.dart';
 import 'package:day_day_3000_fluter_client/statis.dart';
@@ -32,22 +33,19 @@ class LoginPagePage extends StatelessWidget {
                     text: 'app_name'.tr,
                   ),
                 ),
-                TextField(
-                  style: TextStyle(fontSize: Static.text_base),
-                  decoration: InputDecoration.collapsed(hintText: 'name'.tr),
+                AppInputField(
+                  hint: 'name'.tr,
                   onChanged: (String name) {
                     logic.setUsername(name);
                   },
                 ),
                 Padding(
                   padding: EdgeInsets.only(top: Static.p_32),
-                  child: TextField(
+                  child: AppInputField(
+                    hint: 'passsword'.tr,
                     onChanged: (String password) {
                       logic.setPassword(password);
                     },
-                    style: TextStyle(fontSize: Static.text_base),
-                    decoration:
-                        InputDecoration.collapsed(hintText: 'password'.tr),
                   ),
                 ),
                 Obx(() {
