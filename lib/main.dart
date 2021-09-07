@@ -1,4 +1,5 @@
 import 'package:day_day_3000_fluter_client/statis.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
@@ -13,6 +14,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
