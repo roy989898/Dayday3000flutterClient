@@ -52,10 +52,10 @@ class _NewColorTextState extends State<NewColorText> {
         builder: (_, double colorIndex, __) {
           return Neon(
             text: widget.text,
-            color: _colos[colorIndex.round()],
+            color: Colors.teal,
             fontSize: Static.text_5xl,
-            font: NeonFont.Beon,
-            flickeringText: false,
+            font: NeonFont.NightClub70s,
+            flickeringText: true,
           );
         });
   }

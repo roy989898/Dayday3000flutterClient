@@ -52,7 +52,7 @@ class LoginPagePage extends StatelessWidget {
                 Obx(() {
                   return TextButton(
                       style: TextButton.styleFrom(
-                        primary: logic.state.value.btEnabled
+                        backgroundColor: logic.state.value.btEnabled
                             ? Theme.of(context).buttonColor
                             : Theme.of(context).disabledColor,
                       ),
@@ -63,10 +63,7 @@ class LoginPagePage extends StatelessWidget {
                       },
                       child: Text(
                         'login'.tr,
-                        style: Theme.of(context).textTheme.button!.copyWith(
-                            color: logic.state.value.btEnabled
-                                ? Theme.of(context).buttonColor
-                                : Theme.of(context).disabledColor),
+                        style: Theme.of(context).textTheme.button,
                       ));
                 })
               ],

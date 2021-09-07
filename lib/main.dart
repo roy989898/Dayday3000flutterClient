@@ -25,10 +25,10 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           //TODO make the theme
           // Define the default brightness and colors.
-          brightness: Brightness.dark,
-          primaryColor: TWColors.pink.shade500,
-          buttonColor: TWColors.pink.shade500,
-          accentColor: TWColors.orange.shade500,
+          brightness: Brightness.light,
+          primaryColor: TWColors.green.shade500,
+          buttonColor: TWColors.green.shade500,
+          accentColor: TWColors.green.shade200,
           disabledColor: TWColors.gray.shade500,
 
           // Define the default font family.
@@ -36,13 +36,14 @@ class MyApp extends StatelessWidget {
 
           // Define the default TextTheme. Use this to specify the default
           // text styling for headlines, titles, bodies of text, and more.
-          textTheme: const TextTheme(
+          textTheme: TextTheme(
             headline1: TextStyle(
                 fontSize: Static.text_7xl, fontWeight: FontWeight.bold),
             headline6: TextStyle(
                 fontSize: Static.text_4xl, fontStyle: FontStyle.italic),
-            bodyText2: TextStyle(fontSize: Static.text_sm, fontFamily: 'Hind'),
+            bodyText2: TextStyle(fontSize: Static.text_sm),
             button: TextStyle(
+              color: white,
               fontSize: Static.text_2xl,
               // fontFamily: 'Sans Serif',
             ),
