@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../obj.dart';
+import '../statis.dart';
 
 class StockList extends StatefulWidget {
   final List<Stock> stocks;
@@ -18,7 +20,15 @@ class _StockListState extends State<StockList> {
 
   List<Widget> _getChildren(List<Stock> stocks, bool display) {
     return List<Widget>.generate(stocks.length, (i) {
-      return Visibility(visible: display, child: Text(stocks[i].name));
+      return Visibility(
+          visible: display,
+          child: Padding(
+            padding: EdgeInsets.only(top: Static.p_14),
+            child: Text(
+              stocks[i].name,
+              style: TextStyle(fontSize: Static.text_lg),
+            ),
+          ));
     });
   }
 
@@ -27,13 +37,21 @@ class _StockListState extends State<StockList> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        InkWell(
+        Padding(
+          padding: EdgeInsets.only(bottom: Static.p_13),
+          child: InkWell(
             onTap: () {
               setState(() {
                 listOn = !listOn;
               });
             },
-            child: Text(widget.text.split('.')[0])),
+            child: Text(
+              widget.text.split('.')[0],
+              style: TextStyle(
+                  fontSize: Static.text_xl, color: TWColors.green.shade900),
+            ),
+          ),
+        ),
         ..._getChildren(widget.stocks, listOn)
       ],
     );
