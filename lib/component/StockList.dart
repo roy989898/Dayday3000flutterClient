@@ -6,6 +6,7 @@ import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../obj.dart';
 import '../statis.dart';
+import '../util.dart';
 
 class StockList extends StatefulWidget {
   final List<Stock> stocks;
@@ -20,11 +21,6 @@ class StockList extends StatefulWidget {
 
 class _StockListState extends State<StockList> {
   var listOn = false;
-
-  String formatNum(double inn) {
-    var f = NumberFormat("###.0###", "en_US");
-    return f.format(inn);
-  }
 
   List<Widget> _getChildren(List<Stock> stocks, bool display) {
     return List<Widget>.generate(stocks.length, (i) {
