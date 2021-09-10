@@ -26,18 +26,7 @@ class LoginPageLogic extends GetxController {
       //  TODO login success
       Get.toNamed("/list");
     }
-    //TODO trmp try
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    var stockStream = firestore.collection('stock').snapshots();
-    var sub = stockStream.listen((event) {
-      // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
-      printInfo(info: '');
-    }, onError: (e) {
-      printInfo(info: '');
-    });
 
-    //TODO use to cancel the sub
-    // sub.cancel();
   }
 
   Future<void> loginCopy() async {
