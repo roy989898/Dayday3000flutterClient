@@ -11,6 +11,7 @@ class ListLogic extends GetxController {
     super.onReady();
   }
 
+
   @override
   void onClose() {
     // TODO: implement onClose

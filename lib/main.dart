@@ -6,7 +6,7 @@ import 'package:tailwind_colors/tailwind_colors.dart';
 
 import 'colors.dart';
 import 'language/Messages.dart';
-import 'page/DisplayListPage.dart';
+import 'page/list/list_view.dart';
 import 'page/login_page/login_page_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -56,8 +56,8 @@ class MyApp extends StatelessWidget {
         ),
         getPages: [
           GetPage(
-            name: '/',
-            page: () => DisplayListPage(),
+            name: '/list',
+            page: () => ListPage(),
           ),
           GetPage(
             name: '/login',

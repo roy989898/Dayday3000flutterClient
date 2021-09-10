@@ -24,6 +24,7 @@ class LoginPageLogic extends GetxController {
         await FireBaseService.login(state.value.username, state.value.password);
     if (loginSuccess) {
       //  TODO login success
+      Get.toNamed("/list");
     }
     //TODO trmp try
     FirebaseFirestore firestore = FirebaseFirestore.instance;
