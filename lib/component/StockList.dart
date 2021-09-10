@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
 import '../obj.dart';
@@ -18,15 +19,28 @@ class StockList extends StatefulWidget {
 class _StockListState extends State<StockList> {
   var listOn = false;
 
+  String formatNum(double inn) {
+    var f = NumberFormat("###.0###", "en_US");
+    return f.format(inn);
+  }
+
   List<Widget> _getChildren(List<Stock> stocks, bool display) {
     return List<Widget>.generate(stocks.length, (i) {
       return Visibility(
           visible: display,
           child: Padding(
             padding: EdgeInsets.only(top: Static.p_14),
-            child: Text(
-              stocks[i].name,
-              style: TextStyle(fontSize: Static.text_lg),
+            child: Row(
+              children: [
+                Text(
+                  stocks[i].name,
+                  style: TextStyle(fontSize: Static.text_lg),
+                ),
+                Text(
+                  " " + "\$" + formatNum(stocks[i].enter_crash_price),
+                  style: TextStyle(fontSize: Static.text_lg),
+                ),
+              ],
             ),
           ));
     });
