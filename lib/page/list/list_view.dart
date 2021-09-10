@@ -16,14 +16,15 @@ class ListPage extends StatelessWidget {
       appBar: AppAppbar.getAppBar(context),
       body: Padding(
         padding: const EdgeInsets.all(Static.fullPadding),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Center(
-                child: Column(
-              children: [Text('list page')],
-            ))
-          ],
+        child: Container(
+          child: Obx(() {
+            return ListView.builder(
+                itemCount: logic.state.value.dateStocksMap.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Text(
+                      logic.state.value.dateStocksMap.keys.toList()[index]);
+                });
+          }),
         ),
       ),
     ));

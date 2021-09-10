@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 import 'list_state.dart';
 
 class ListLogic extends GetxController {
-  final ListState state = ListState();
+  final state = ListState().obs;
   final streamSubs = List<StreamSubscription>.empty();
 
   @override
@@ -69,7 +69,10 @@ class ListLogic extends GetxController {
 
       }
 
-      state.dateStocksMap = dateStocksMap;
+      // state.dateStocksMap = dateStocksMap;
+      state.update((ListState? val) {
+        val!.dateStocksMap= dateStocksMap;
+      });
       // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
     }, onError: (e) {
       showDialog(e.toString(), 'err'.tr);
@@ -77,8 +80,6 @@ class ListLogic extends GetxController {
 
     streamSubs.add(sub);
   }
-
-
 
   @override
   void onClose() {
