@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
             headline1: TextStyle(
                 fontSize: Static.text_7xl, fontWeight: FontWeight.bold),
             headline6: TextStyle(
-                fontSize: Static.text_4xl, fontStyle: FontStyle.italic),
+                fontSize: Static.text_2xl),
             bodyText2: TextStyle(fontSize: Static.text_sm),
             button: TextStyle(
               color: white,

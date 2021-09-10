@@ -1,7 +1,9 @@
 import 'dart:async';
+import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:day_day_3000_fluter_client/obj.dart';
+import 'package:day_day_3000_fluter_client/util.dart';
 import 'package:get/get.dart';
 
 import 'list_state.dart';
@@ -12,8 +14,8 @@ class ListLogic extends GetxController {
 
   @override
   void onReady() {
-    // TODO: implement onReady
     startListenStockList();
+
     super.onReady();
   }
 
@@ -69,15 +71,14 @@ class ListLogic extends GetxController {
 
       state.dateStocksMap = dateStocksMap;
       // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
-      printInfo(info: '');
     }, onError: (e) {
-      printInfo(info: '');
+      showDialog(e.toString(), 'err'.tr);
     });
 
     streamSubs.add(sub);
   }
 
-  void stopListenStockList() {}
+
 
   @override
   void onClose() {

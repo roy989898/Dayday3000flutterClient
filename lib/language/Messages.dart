@@ -8,6 +8,8 @@ class Messages extends Translations {
           'name': 'Name',
           'password': 'Password',
           'login': 'Login',
+          'ok': 'Ok',
+          'err': 'Error',
         },
       };
 }
