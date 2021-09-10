@@ -1,4 +1,6 @@
 import 'package:day_day_3000_fluter_client/component/AppAppBar.dart';
+import 'package:day_day_3000_fluter_client/component/StockList.dart';
+import 'package:day_day_3000_fluter_client/obj.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,8 +23,11 @@ class ListPage extends StatelessWidget {
             return ListView.builder(
                 itemCount: logic.state.value.dateStocksMap.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Text(
-                      logic.state.value.dateStocksMap.keys.toList()[index]);
+                  var map = logic.state.value.dateStocksMap;
+                  var key = map.keys.toList()[index];
+                  List<Stock> stocks = map[key] ?? [];
+
+                  return StockList(stocks: stocks, text: key);
                 });
           }),
         ),
