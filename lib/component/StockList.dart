@@ -1,4 +1,6 @@
+import 'package:day_day_3000_fluter_client/page/detail/detail_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
@@ -28,19 +30,24 @@ class _StockListState extends State<StockList> {
     return List<Widget>.generate(stocks.length, (i) {
       return Visibility(
           visible: display,
-          child: Padding(
-            padding: EdgeInsets.only(top: Static.p_14),
-            child: Row(
-              children: [
-                Text(
-                  stocks[i].name,
-                  style: TextStyle(fontSize: Static.text_lg),
-                ),
-                Text(
-                  " " + "\$" + formatNum(stocks[i].enter_crash_price),
-                  style: TextStyle(fontSize: Static.text_lg),
-                ),
-              ],
+          child: InkWell(
+            onTap: () {
+              Get.to(DetailPage(stocks[i]));
+            },
+            child: Padding(
+              padding: EdgeInsets.only(top: Static.p_14),
+              child: Row(
+                children: [
+                  Text(
+                    stocks[i].name,
+                    style: TextStyle(fontSize: Static.text_lg),
+                  ),
+                  Text(
+                    " " + "\$" + formatNum(stocks[i].enter_crash_price),
+                    style: TextStyle(fontSize: Static.text_lg),
+                  ),
+                ],
+              ),
             ),
           ));
     });
