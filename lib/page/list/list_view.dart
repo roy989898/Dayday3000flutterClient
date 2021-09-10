@@ -1,3 +1,4 @@
+import 'package:day_day_3000_fluter_client/component/AppAppBar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,6 +13,7 @@ class ListPage extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
+      appBar: AppAppbar.getAppBar(context),
       body: Padding(
         padding: const EdgeInsets.all(Static.fullPadding),
         child: Column(
