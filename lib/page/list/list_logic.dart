@@ -20,8 +20,8 @@ class ListLogic extends GetxController {
     var stockStream = firestore.collection('stock').snapshots();
     // var sub =
     stockStream.listen((event) async {
-      Iterable<Future<Stock>> stocksF=event.docs.map((doc) async {
-        // var doc = event.docs.first;
+      var stocks = <Stock>[];
+      for (var doc in event.docs) {
         String dateString = doc.get('date');
         var docId = doc.id;
         var stockConnectionInSpecificDate =
@@ -58,9 +58,8 @@ class ListLogic extends GetxController {
             high_ref_price,
             high_ref_price_date,
             name);
-
-        return stock;
-      });
+        stocks.add(stock);
+      }
 
       // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
       printInfo(info: '');
