@@ -25,6 +25,7 @@ class _StockListState extends State<StockList> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         InkWell(
             onTap: () {
@@ -32,16 +33,8 @@ class _StockListState extends State<StockList> {
                 listOn = !listOn;
               });
             },
-            child: Text(widget.text)),
+            child: Text(widget.text.split('.')[0])),
         ..._getChildren(widget.stocks, listOn)
-        /*    Expanded(
-          child: ListView.builder(
-              itemCount: widget.stocks.length,
-              itemBuilder: (BuildContext context, int index) {
-                var stock = widget.stocks[index];
-                return Text(stock.name);
-              }),
-        ),*/
       ],
     );
   }
