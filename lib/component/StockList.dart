@@ -16,11 +16,24 @@ class StockList extends StatefulWidget {
 class _StockListState extends State<StockList> {
   var listOn = false;
 
+  List<Widget> _getChildren(List<Stock> stocks, bool display) {
+    return List<Widget>.generate(stocks.length, (i) {
+      return Visibility(visible: display, child: Text(stocks[i].name));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(widget.text),
+        InkWell(
+            onTap: () {
+              setState(() {
+                listOn = !listOn;
+              });
+            },
+            child: Text(widget.text)),
+        ..._getChildren(widget.stocks, listOn)
         /*    Expanded(
           child: ListView.builder(
               itemCount: widget.stocks.length,
