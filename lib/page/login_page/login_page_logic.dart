@@ -24,9 +24,9 @@ class LoginPageLogic extends GetxController {
         await FireBaseService.login(state.value.username, state.value.password);
     if (loginSuccess) {
       //  TODO login success
-      Get.toNamed("/list");
+      // Get.toNamed("/list");
+      Get.offAllNamed("/list");
     }
-
   }
 
   Future<void> loginCopy() async {
