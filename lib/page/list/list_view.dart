@@ -9,7 +9,7 @@ class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final logic = Get.put(ListLogic());
-    final state = Get.find<ListLogic>().state;
+    // final state = Get.find<ListLogic>().state;
 
     return SafeArea(
         child: Scaffold(
