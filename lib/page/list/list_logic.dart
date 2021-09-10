@@ -20,6 +20,7 @@ class ListLogic extends GetxController {
     var stockStream = firestore.collection('stock').snapshots();
     // var sub =
     stockStream.listen((event) async {
+      var dateStocksMap = Map<String, List<Stock>>();
       for (var doc in event.docs) {
         String dateString = doc.get('date');
         var docId = doc.id;
@@ -27,7 +28,7 @@ class ListLogic extends GetxController {
             firestore.collection('stock/$docId/stock');
         var stockConnectionInSpecificDateResult =
             await stockConnectionInSpecificDate.get();
-        var stocks = <Stock>[];
+        List<Stock> stocks = <Stock>[];
         for (var stockConnectionInSpecificDateResultDoc
             in stockConnectionInSpecificDateResult.docs) {
           bool crash_finish =
@@ -57,7 +58,7 @@ class ListLogic extends GetxController {
               name);
           stocks.add(stock);
         }
-        printInfo(info: '');
+        dateStocksMap[dateString] = stocks;
 
         /*var stockConnectionInSpecificDateResultDoc =
             stockConnectionInSpecificDateResult.docs.first;*/
