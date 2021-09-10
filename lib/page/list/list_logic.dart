@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:day_day_3000_fluter_client/obj.dart';
 import 'package:get/get.dart';
@@ -6,6 +8,7 @@ import 'list_state.dart';
 
 class ListLogic extends GetxController {
   final ListState state = ListState();
+  final streamSubs = List<StreamSubscription>.empty();
 
   @override
   void onReady() {
@@ -15,11 +18,10 @@ class ListLogic extends GetxController {
   }
 
   void startListenStockList() async {
-    //TODO trmp try
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     var stockStream = firestore.collection('stock').snapshots();
     // var sub =
-    stockStream.listen((event) async {
+    var sub = stockStream.listen((event) async {
       var dateStocksMap = Map<String, List<Stock>>();
       for (var doc in event.docs) {
         String dateString = doc.get('date');
@@ -65,21 +67,23 @@ class ListLogic extends GetxController {
 
       }
 
+      state.dateStocksMap = dateStocksMap;
       // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
       printInfo(info: '');
     }, onError: (e) {
       printInfo(info: '');
     });
 
-    //TODO use to cancel the sub
-    // sub.cancel();
+    streamSubs.add(sub);
   }
 
   void stopListenStockList() {}
 
   @override
   void onClose() {
-    // TODO: implement onClose
+    streamSubs.forEach((element) {
+      element.cancel();
+    });
     super.onClose();
   }
 }
