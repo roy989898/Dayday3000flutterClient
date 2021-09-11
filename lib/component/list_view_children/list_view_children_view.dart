@@ -8,9 +8,7 @@ import '../../util.dart';
 import 'list_view_children_logic.dart';
 
 class ListViewChildren extends StatelessWidget {
-  ListViewChildrenLogic logic = Get.put(ListViewChildrenLogic());
-
-  final state = Get.find<ListViewChildrenLogic>().state;
+  late ListViewChildrenLogic logic/*= Get.put(ListViewChildrenLogic())*/;
 
   late final String docId;
   late final bool listOn;
@@ -18,7 +16,9 @@ class ListViewChildren extends StatelessWidget {
   ListViewChildren(String docId, bool listOn) {
     this.docId = docId;
     this.listOn = listOn;
-    logic.docId=docId;
+    logic = Get.put(ListViewChildrenLogic(), tag: docId);
+
+    logic.docId = docId;
   }
 
   List<Widget> _getChildren(List<Stock> stocks, bool display) {
@@ -53,7 +53,7 @@ class ListViewChildren extends StatelessWidget {
     return Obx(() {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [..._getChildren(state.value.stocks, listOn)],
+        children: [..._getChildren(logic.state.value.stocks, listOn)],
       );
     });
   }
