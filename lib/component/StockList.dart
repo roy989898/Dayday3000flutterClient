@@ -1,3 +1,4 @@
+import 'package:day_day_3000_fluter_client/component/list_view_children/list_view_children_view.dart';
 import 'package:day_day_3000_fluter_client/page/detail/detail_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -9,10 +10,10 @@ import '../statis.dart';
 import '../util.dart';
 
 class StockList extends StatefulWidget {
-  final List<Stock> stocks;
   final String text;
+  final String docId;
 
-  const StockList({Key? key, required this.stocks, required this.text})
+  const StockList({Key? key, required this.text, required this.docId})
       : super(key: key);
 
   @override
@@ -69,7 +70,8 @@ class _StockListState extends State<StockList> {
             ),
           ),
         ),
-        ..._getChildren(widget.stocks, listOn)
+        // ..._getChildren(widget.stocks, listOn)
+        ListViewChildren(widget.docId, listOn)
       ],
     );
   }

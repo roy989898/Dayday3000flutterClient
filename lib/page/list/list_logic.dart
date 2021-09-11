@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,11 +25,15 @@ class ListLogic extends GetxController {
     var stockStream = firestore.collection('stock').snapshots();
     // var sub =
     var sub = stockStream.listen((event) async {
-      var dateStocksMap = Map<String, List<Stock>>();
+      // var dateStocksMap = Map<String, List<Stock>>();
+      var docIds = <String>[];
+      var dates = <String>[];
       for (var doc in event.docs) {
         String dateString = doc.get('date');
         var docId = doc.id;
-        var stockConnectionInSpecificDate =
+        docIds.add(docId);
+        dates.add(dateString);
+        /*var stockConnectionInSpecificDate =
             firestore.collection('stock/$docId/stock');
         var stockConnectionInSpecificDateResult =
             await stockConnectionInSpecificDate.get();
@@ -62,7 +67,7 @@ class ListLogic extends GetxController {
               name);
           stocks.add(stock);
         }
-        dateStocksMap[dateString] = stocks;
+        dateStocksMap[dateString] = stocks;*/
 
         /*var stockConnectionInSpecificDateResultDoc =
             stockConnectionInSpecificDateResult.docs.first;*/
@@ -71,7 +76,8 @@ class ListLogic extends GetxController {
 
       // state.dateStocksMap = dateStocksMap;
       state.update((ListState? val) {
-        val!.dateStocksMap= dateStocksMap;
+        val?.docIds = docIds;
+        val?.dates = dates;
       });
       // event.docs.map((QueryDocumentSnapshot<Map<String, dynamic>> doc) {});
     }, onError: (e) {

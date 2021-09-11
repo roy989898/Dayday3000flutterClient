@@ -21,13 +21,17 @@ class ListPage extends StatelessWidget {
         child: Container(
           child: Obx(() {
             return ListView.builder(
-                itemCount: logic.state.value.dateStocksMap.length,
+                itemCount: logic.state.value.docIds.length,
                 itemBuilder: (BuildContext context, int index) {
-                  var map = logic.state.value.dateStocksMap;
+                  /*var map = logic.state.value.dateStocksMap;
                   var key = map.keys.toList()[index];
-                  List<Stock> stocks = map[key] ?? [];
-
-                  return StockList(stocks: stocks, text: key);
+                  List<Stock> stocks = map[key] ?? [];*/
+                  var docIds = logic.state.value.docIds[index];
+                  var date = logic.state.value.dates[index];
+                  return StockList(
+                    text: date,
+                    docId: docIds,
+                  );
                 });
           }),
         ),
