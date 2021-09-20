@@ -1,6 +1,5 @@
 import 'dart:async';
 
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:day_day_3000_fluter_client/util.dart';
@@ -27,21 +26,26 @@ class ListLogic extends GetxController {
       // var dateStocksMap = Map<String, List<Stock>>();
       var docIds = <String>[];
       var dates = <String>[];
-      for (var doc in event.docs) {
+      var docs = event.docs;
+      docs.sort((a, b) {
+        String aDateString = a.get('date');
+        String bDateString = b.get('date');
+        var aParsedDate = DateTime.parse(aDateString);
+        var bParsedDate = DateTime.parse(bDateString);
+        // var compareResult=aParsedDate.isAfter(bParsedDate);
+        return bParsedDate.compareTo(aParsedDate);
+      });
+      for (var doc in docs) {
         String dateString = doc.get('date');
         var docId = doc.id;
         docIds.add(docId);
         dates.add(dateString);
-
-
       }
-
 
       state.update((ListState? val) {
         val?.docIds = docIds;
         val?.dates = dates;
       });
-
     }, onError: (e) {
       showDialog(e.toString(), 'err'.tr);
     });
