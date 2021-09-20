@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:neon/neon.dart';
 import 'package:tailwind_colors/tailwind_colors.dart';
 
+import '../../Config.dart';
 import 'login_page_logic.dart';
 
 class LoginPagePage extends StatelessWidget {
@@ -32,6 +33,16 @@ class LoginPagePage extends StatelessWidget {
                   child: NewColorText(
                     text: 'app_name'.tr,
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      version,
+                      style: TextStyle(
+                          color: TWColors.gray.shade400, fontSize: Static.text_xs),
+                    ),
+                  ],
                 ),
                 AppInputField(
                   hint: 'name'.tr,
